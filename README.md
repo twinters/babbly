@@ -21,7 +21,7 @@ import firstname.words
 food = pasta|pizza|sushi
 main = {
   3: <firstname> loves <food>!
-  1: <firstname> (quite|reasonably|fairly) likes eating <food>. Oo{1,3}h, I really hope she'll join!
+  1: <firstname> (quite|reasonably|fairly) likes eating <food>. Oo{1,3}h, I really hope they'll join!
   1: <firstname:protagonist> is not (quite){.5} fond of <food:>. <firstname:protagonist> will thus not go to the <food:> (restaurant|place).
 }
 ```
