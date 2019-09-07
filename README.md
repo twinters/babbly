@@ -38,10 +38,7 @@ The third clause shows that variables can also be locked within the same generat
 The record name can also be of zero length (as done with `<food:>`).
 There is also a 50% probability of 'quite' being used in the generation, as the `{.5}` specifies a probability of the previous part or token.
 
-
-## Examples
-
-More examples can be found in the following locations:
+More examples can be found on the following locations:
 - Babbly's [Example Folder](https://github.com/twinters/babbly/tree/master/examples)
 - *(Dutch)* [Samson & Gert Twitterbots](https://twitter.com/thomas_wint/lists/samson-bots) all use Babbly: [SamsonBot](https://github.com/twinters/samson-bot/blob/master/src/main/resources/data/templates/samson.decl), [GertBot](https://github.com/twinters/samson-bot/blob/master/src/main/resources/data/templates/gert-verbeter.decl), [BurgemeesterBot](https://github.com/twinters/burgemeester-bot/blob/master/src/main/resources/templates/toespraak.decl), [AlbertoBot](https://github.com/twinters/alberto-bot/blob/master/src/main/resources/templates/alberto.decl), [OctaafBot](https://github.com/twinters/octaaf-bot/blob/master/src/main/resources/templates/octaaf.decl), [JeannineBot](https://github.com/twinters/jeannine-bot/blob/master/src/main/resources/templates/jeannine.decl).
 
