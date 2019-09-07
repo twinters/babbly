@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Deprecated
 public class SynonymCommand extends SingleGeneratorArgumentCommand {
 
     private static final IDictionary dictionary;

@@ -46,7 +46,7 @@ public class TextGeneratorParser {
             // Uppercase
             new SingleTextGeneratorArgumentCommandFactory("upper", UpperCaseCommand::new),
             // Synonym
-            new SingleTextGeneratorArgumentCommandFactory("synonym", SynonymCommand::new),
+//            new SingleTextGeneratorArgumentCommandFactory("synonym", SynonymCommand::new),
             // Ifdefined
             new SingleTextGeneratorArgumentCommandFactory("ifdefined", IfDefinedCommand::new),
             // Maybe
