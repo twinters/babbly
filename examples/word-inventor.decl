@@ -1,0 +1,35 @@
+// Letters
+B = b|c|d|f|g|h|j|k|l|m|n|p|qu|r|s|t|v|w|x|y|z|b|c|d|f|g|h|j|k|l|m|n|p|qu|r|s|t|v|w|x|y|z|ch|cl|cr|br|bl|dr|fr|fl|gl|gr|kr|kl|pr|pl|ps|st|str|sl|sc|tr|th|vr|vl
+D = b|c|d|k|l|m|n|p|r|s|t
+F = b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|z
+O = a|e|i|o|u|y
+US = al|able|ae|ar|er|ey|i|ia|ian|ich|in|inator|io|ion|ism|ix|ize|kov|le|man|or|os|que|se|ski|th|us|y // Dit zijn uitgangen
+
+main = {
+	<O:><O:><D>
+	<O><O><D><US>
+	<O><D:><D:><O><F>
+	<O><D:><D:><O><F><O><F><US>
+	<O><D:><D:><O><F><F><O>
+	<O><D:><D:><O><F>
+	<O><D:><D:><O>
+	<O><D:><D:><O>
+	<O><D:><D:><US>
+	<O><D:><D:><O><F><F><US>
+	<O><F><O><D:><D:><O><F>
+	<B><O><D:><D:><O><F><O><F>
+	<B><O><O><D>
+	<B><O><D>
+	<B><O><F>
+	<B><O><O>
+	<B><O><D:><D:><O><F><US>
+	<B><O><D:><D:><O><F>
+	<B><O><D:><D:><O><F><F><O>
+	<B><O><D:><D:><O><F>
+	<B><O><D:><D:><US>
+	<B><O><D>
+	<B><O><D><US>
+	<B><O><D:><D:><O><F>
+	<B><O><D:><D:><O>
+	<B><O><D>
+}
