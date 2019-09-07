@@ -3,7 +3,7 @@ Babbly is a language designed for efficient and elegant modeling of custom text 
 
 ## Introduction
 Babbly is a language for modelling text generators.
-It is inspired by context-free grammars and regular expression-syntax, and adds weights to more easily model generators.
+It is inspired by context-free grammars and regular expression-syntax, and adds weights to more easily model the probabilities of the output texts of the generators.
 It also supports using externally declared text generators to be used within the language, as well as importing other Babbly files or word lists.
 
 ## Dependencies
