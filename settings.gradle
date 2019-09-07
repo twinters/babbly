@@ -1,0 +1,8 @@
+
+include ':text-util'
+project(':text-util').projectDir = new File(settingsDir, '../text-util')
+include ':generator-util'
+project(':generator-util').projectDir = new File(settingsDir, '../generator-util')
+
+rootProject.name = 'babbly'
+

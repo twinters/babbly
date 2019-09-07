@@ -1,0 +1,24 @@
+group 'be.thomaswinters'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 9
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'edu.mit:jwi:2.2.3'
+    compile 'org.apache.commons:commons-lang3:3.5'
+    compile 'org.apache.commons:commons-math3:3.4'
+    compile group: 'com.beust', name: 'jcommander', version: '1.72'
+    compile 'edu.stanford.nlp:stanford-corenlp:3.8.0'
+    compile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    compile 'com.google.guava:guava:11.0.2'
+    compile project(':text-util')
+    compile project(':generator-util')
+}
