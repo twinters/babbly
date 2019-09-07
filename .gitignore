@@ -104,3 +104,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+/gradle
+gradlew
+gradlew.bat
