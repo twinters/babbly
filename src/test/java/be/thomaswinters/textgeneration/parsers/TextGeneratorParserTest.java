@@ -47,14 +47,8 @@ public class TextGeneratorParserTest {
 
     @BeforeAll
     public static void setup() throws IOException {
-        int index = 0;
-        do {
-            String name = "tmp" + index + ".words";
-            tmpWordDatabaseFile = new File(name);
-            index++;
-        } while (tmpWordDatabaseFile.exists());
-
-        tmpWordDatabaseFile.createNewFile();
+        String name = "tmp.words";
+        tmpWordDatabaseFile = File.createTempFile(name, null);
         tmpWordDatabaseFile.deleteOnExit();
     }
 

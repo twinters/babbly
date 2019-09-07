@@ -18,11 +18,11 @@ public class TextGeneratorTest {
     public void setup() throws IOException {
         DisjunctionTextGenerator.setSeed(SEED);
 
-        testFile1 = new File("tmp1.cdb");
+        testFile1 = File.createTempFile("tmp1.cdb", null);
         testFile1.createNewFile();
         testFile1.deleteOnExit();
 
-        testFile2 = new File("tmp2.cdb");
+        testFile2 = File.createTempFile("tmp2.cdb", null);
         testFile2.createNewFile();
         testFile2.deleteOnExit();
 

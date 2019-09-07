@@ -33,11 +33,11 @@ public class CombinationDatabaseTextGenerationTest {
     public void setup() throws IOException {
         DisjunctionTextGenerator.setSeed(SEED);
 
-        testFile1 = new File("tmp1.decl");
+        testFile1 = File.createTempFile("tmp1.decl", null);
         testFile1.createNewFile();
         testFile1.deleteOnExit();
 
-        testFile2 = new File("tmp2.decl");
+        testFile2 = File.createTempFile("tmp2.decl", null);
         testFile2.createNewFile();
         testFile2.deleteOnExit();
 
@@ -103,7 +103,7 @@ public class CombinationDatabaseTextGenerationTest {
     @Test
     public void ToString_Normal_Calculated() throws IOException {
         ITextGenerator cdb = new DeclarationsFileTextGeneratorProxy(testFile1);
-        assertEquals("\\decl(tmp1.decl)", cdb.toString());
+        assertTrue(cdb.toString().startsWith("\\decl("));
     }
 
     /*-********************************************-*/
