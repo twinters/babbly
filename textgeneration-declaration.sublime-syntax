@@ -1,0 +1,123 @@
+%YAML 1.2
+---
+name: Textgeneration Declaration
+file_extensions: [decl]
+scope: source.textgen
+
+contexts:
+  comment:
+    - match: \/\/.*
+      scope: comment
+
+  main:
+    - include: comment
+    - match: (import)\s*(.*)
+      captures:
+        1: keyword.other.imports
+        2: support.class.importname
+    - match: (\w+)\s?(=)
+      captures:
+        1: entity.name.declarationname
+        2: keyword.operator.assignment
+      push: startdeclaration
+    # - match: \\.
+    #   scope: constant.character.escape.c
+    
+  startdeclaration:
+    - match: \s+\{
+      scope: keyword.operator.startmultiline
+      set: multilinetextgenerator
+    - match: \s+(?!{)
+      set: textgenerator
+
+
+
+  textgenerator:
+    - include: comment
+    - match: \<
+      scope: keyword.referenceddeclaration.start
+      push: declarationref
+    - match: \|
+      scope: keyword.operator.disjunction
+    - match: \||
+      scope: keyword.operator.equaldisjunction
+    - match: /
+      scope: keyword.operator.cascade
+    - match: \\
+      scope: keyword.operator.function
+      push: function
+    - match: \(
+      scope: meta.bracket
+      push: textgenerator
+    - match: \n
+      pop: true
+    - match: \)
+      scope: meta.bracket
+      pop: true
+    - match: \{
+      scope: keyword.operator.repeater.start
+      push: repeater
+    - match: .
+      scope: string.textgenerator.statictext
+
+  repeater:
+    - match: (\d+)\s?(,)\s?(\d+)
+      captures:
+        1: constant.numeric.min
+        2: keyword.operator.repeatersplitter
+        3: constant.numeric.max
+    - match: (0?.\d+)
+      scope: constant.numeric.chance
+    - match: \}
+      scope: keyword.operator.repeater.end
+      pop: true
+
+  functionargument:
+    - match: (?=\))
+      pop: true
+    - include: textgenerator
+
+  function:
+    - match: \w+
+      scope: variable.function.functionname
+    - match: \(
+      scope: keyword.operator.functionargument.start
+      push: functionargument
+    - match: \)
+      scope: keyword.operator.functionargument.stop
+      pop: true
+
+  declarationref:
+    - match: (\w+)(:)?(\w+)?
+      captures:
+        1: entity.name.referenceddeclaration
+        2: keyword.operator.identifier
+        3: variable.parameter.identifier
+    - match: \.
+      scope: keyword.operator.functionstart
+      push: declarationmapper
+    - match: \>
+      scope: keyword.referenceddeclaration.stop
+      pop: true
+
+  declarationmapper:
+    - match: \w+
+      scope: variable.function.functionname
+    - match: (?=\>|\.)
+      pop: true
+
+
+  multilinetextgenerator:
+    - include: comment
+    - match: ((\d+)|([x]))([:]\s)
+    # - match: ([0-9]+): (.*)
+      captures:
+        1: constant.numeric.weight
+        2: constant.generationweight
+        4: keyword.operator.weightassignment
+      push: textgenerator
+    - match: (?=\w|<|\(|\d)
+      push: textgenerator
+    - match: \s*\}
+      scope: keyword.operator.endmultiline      
+      pop: true
